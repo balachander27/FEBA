@@ -8,14 +8,12 @@ from collections import Counter
 
 def histogram_sampler(data, no_new_data, data_feat, preserve):
 
-    if(data_feat == 'c'):
+    if (data_feat == 'c'):
         start_time = time.time()
         print('Existing data:', len(data))
         print('New data to be produced:', no_new_data)
 
         '''Function parameters'''
-        #data = [1,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,6,6,6,6,9,9,9,9,9]
-        #no_new_data = 120
 
         '''
         X_new = New data for each iteration
@@ -23,7 +21,7 @@ def histogram_sampler(data, no_new_data, data_feat, preserve):
         iter_count = no. of iterations
         data_gen = Augmented data (original data + newly generated data)
         '''
-        X_new=[]
+        X_new = []
         len_X_new = len(X_new)
         iter_count = 0
         data_gen = data
@@ -80,8 +78,8 @@ def histogram_sampler(data, no_new_data, data_feat, preserve):
                     y1 = y1*(np.random.rand()<=y1)
                 '''
                 #else:
-                ym = ym*(abs(np.random.normal(0,0.20))<=ym)
-                y1 = y1*(abs(np.random.normal(0,0.20))<=y1)
+                ym = ym*(abs(np.random.normal(0,0.50))<=ym)
+                y1 = y1*(abs(np.random.normal(0,0.50))<=y1)
 
                 '''
                 Appending: appending the valid values
