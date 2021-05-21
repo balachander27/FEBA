@@ -135,7 +135,8 @@ def histogram_sampler(data, no_new_data, data_feat, preserve):
             for i in range(X_new[j]):
                 data_gen.append(disc_data[j])
 
-        data_gen = data + data_gen
+        if(len(data_gen)==0):
+            data_gen = data + data_gen
                     
         if(no_new_data > sum(X_new)):
             data_gen = list(data_gen + list(np.random.choice(data_gen,int(no_new_data-sum(X_new)),replace = False)))    
