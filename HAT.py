@@ -36,7 +36,7 @@ def histogram_sampler(data, no_new_data, data_feat, preserve):
             '''
 
             if(iter_count == 1):
-                Y,X_interval=np.histogram(data_gen,bins='fd')
+                Y,X_interval=np.histogram(data_gen,bins='doane')
                 n_bins = len(Y)
 
             else:
