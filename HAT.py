@@ -114,7 +114,7 @@ def histogram_sampler(data, no_new_data, data_feat, preserve):
 
         else:
             print('to discrete...', no_new_data - (len(data_gen)-len(data)))
-            samples = histogram(data_gen, no_new_data - (len(data_gen)-len(data)), 'd', preserve = True)
+            samples = histogram_sampler(data_gen, no_new_data - (len(data_gen)-len(data)), 'd', preserve = True)
             if(preserve == False):
                 samples = samples[len(data):]
             return samples
